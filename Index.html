@@ -3,35 +3,631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K Crew Dancers - Support the Movement</title>
+    <title>K Crew Dancers - Blue Dance Vibes</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
         * { box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
-        header { background: #1a1a1a; color: #fff; text-align: center; padding: 60px 20px; }
-        header h1 { font-size: 2.5em; margin: 0; }
-        nav { background: #333; padding: 15px; text-align: center; }
-        nav a { color: #fff; margin: 0 20px; text-decoration: none; font-weight: bold; }
-        nav a:hover { color: #ffd700; }
-        section { padding: 40px 20px; max-width: 1200px; margin: auto; }
-        .hero { background: url('dance-crew-hero.jpg') center/cover; height: 400px; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); text-align: center; }
-        .hero a { background: #ffd700; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .funding-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .funding-item { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .gallery img { width: 100%; max-width: 300px; border-radius: 8px; }
-        footer { background: #333; color: #fff; text-align: center; padding: 20px; }
-        @media (max-width: 600px) { header h1 { font-size: 1.8em; } .hero { height: 300px; } }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4834d4 100%);
+            color: #fff; 
+            overflow-x: hidden;
+        }
+
+        /* Sticky Header with Music Control */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(103, 126, 234, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid rgba(254, 202, 87, 0.3);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(103, 126, 234, 0.3);
+        }
+
+        .sticky-header.scrolled {
+            background: rgba(103, 126, 234, 0.98);
+            box-shadow: 0 8px 30px rgba(103, 126, 234, 0.4);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(254, 202, 87, 0.4);
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { box-shadow: 0 4px 15px rgba(254, 202, 87, 0.4); }
+            to { box-shadow: 0 8px 25px rgba(254, 202, 87, 0.6), 0 0 30px rgba(255, 159, 243, 0.3); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: #feca57;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .music-control {
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(254, 202, 87, 0.3);
+        }
+
+        .music-control:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 6px 20px rgba(254, 202, 87, 0.5);
+        }
+
+        .music-control.playing {
+            animation: music-pulse 0.6s ease-in-out infinite alternate;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+        }
+
+        @keyframes music-pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+        
+        header { 
+            background: linear-gradient(135deg, #667eea, #4834d4, #764ba2);
+            color: #fff; 
+            text-align: center; 
+            padding: 120px 20px 80px 20px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff10"><polygon points="0,0 1000,100 1000,0"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        header h1 { 
+            font-size: 3.5em; 
+            margin: 0; 
+            font-weight: 800;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: bounce 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-10px); }
+        }
+        
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        nav { 
+            background: rgba(72, 52, 212, 0.8); 
+            padding: 20px; 
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 70px;
+            z-index: 999;
+            border-top: 2px solid rgba(254, 202, 87, 0.3);
+        }
+        
+        nav a { 
+            color: #fff; 
+            margin: 0 25px; 
+            text-decoration: none; 
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        nav a:hover { 
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(254, 202, 87, 0.4);
+        }
+        
+        section { 
+            padding: 60px 20px; 
+            max-width: 1200px; 
+            margin: auto;
+            position: relative;
+        }
+        
+        .hero { 
+            background: linear-gradient(135deg, rgba(103,126,234,0.9), rgba(72,52,212,0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff20"><circle cx="20" cy="20" r="2"/><circle cx="80" cy="40" r="3"/><circle cx="40" cy="80" r="2"/><circle cx="90" cy="90" r="1"/><circle cx="10" cy="60" r="2"/></svg>');
+            height: 500px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #fff; 
+            text-align: center;
+            position: relative;
+            border-radius: 20px;
+            margin: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(103, 126, 234, 0.3);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(254,202,87,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+        
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50px, -50px); }
+        }
+        
+        .hero div {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+        
+        .hero a { 
+            background: linear-gradient(135deg, #feca57, #ff9ff3); 
+            color: #000; 
+            padding: 15px 35px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 700;
+            font-size: 1.2em;
+            box-shadow: 0 10px 30px rgba(254, 202, 87, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .hero a:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(254, 202, 87, 0.6);
+        }
+        
+        .section-bg {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 20px 0;
+            border: 2px solid rgba(103, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-bg:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(103,126,234,0.1), transparent);
+            transform: rotate(45deg);
+            animation: section-shine 8s linear infinite;
+        }
+
+        @keyframes section-shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #feca57, #ff9ff3, #667eea);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            animation: color-dance 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes color-dance {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .funding-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .funding-item { 
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            padding: 30px; 
+            border-radius: 20px; 
+            text-align: center;
+            border: 2px solid rgba(103, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+        
+        .funding-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(254, 202, 87, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .funding-item:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 25px 45px rgba(254, 202, 87, 0.3);
+            border-color: #feca57;
+        }
+        
+        .funding-item:hover::before {
+            left: 100%;
+        }
+        
+        .funding-item h3 {
+            color: #feca57;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .payment-form { 
+            background: linear-gradient(135deg, rgba(103,126,234,0.15), rgba(72,52,212,0.15));
+            padding: 40px; 
+            border-radius: 25px; 
+            max-width: 600px; 
+            margin: 40px auto;
+            border: 2px solid rgba(254, 202, 87, 0.3);
+            backdrop-filter: blur(15px);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .payment-form input, .payment-form select { 
+            width: 100%; 
+            padding: 15px; 
+            margin: 15px 0; 
+            border: 2px solid rgba(255,255,255,0.3); 
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .payment-form input:focus, .payment-form select:focus {
+            outline: none;
+            border-color: #feca57;
+            box-shadow: 0 0 20px rgba(254,202,87,0.4);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .payment-form input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .payment-form select option {
+            background: #4834d4;
+            color: white;
+        }
+        
+        .payment-form button { 
+            background: linear-gradient(135deg, #feca57, #ff9ff3); 
+            color: #fff; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .payment-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(254, 202, 87, 0.4);
+        }
+        
+        .payment-instructions { 
+            display: none; 
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            padding: 30px; 
+            margin-top: 30px; 
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gallery img { 
+            width: 100%; 
+            max-width: 320px; 
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            filter: brightness(0.8) contrast(1.2);
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            filter: brightness(1) contrast(1.3);
+        }
+        
+        .events-list {
+            list-style: none;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .events-list li {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            border-left: 5px solid #feca57;
+            transition: all 0.3s ease;
+        }
+        
+        .events-list li:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.15));
+        }
+        
+        .events-list a {
+            color: #ff9ff3;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: rgba(255,159,243,0.2);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .events-list a:hover {
+            background: #ff9ff3;
+            color: #fff;
+        }
+        
+        footer { 
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            color: #fff; 
+            text-align: center; 
+            padding: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Music Status Indicator */
+        .music-status {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: linear-gradient(135deg, rgba(103, 126, 234, 0.9), rgba(72, 52, 212, 0.9));
+            backdrop-filter: blur(15px);
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            border: 2px solid rgba(254, 202, 87, 0.3);
+            color: white;
+            font-weight: 600;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(103, 126, 234, 0.4);
+        }
+
+        .music-status.show {
+            display: block;
+            animation: slideInLeft 0.5s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) { 
+            .header-content { padding: 0 1rem; }
+            .header-actions { gap: 1rem; }
+            header h1 { font-size: 2.2em; } 
+            .hero { height: 400px; margin: 10px; } 
+            .hero h2 { font-size: 2em; }
+            nav a { margin: 0 10px; font-size: 0.9em; }
+            .funding-grid { grid-template-columns: 1fr; }
+            .contact-info { flex-direction: column; align-items: center; }
+            .payment-form { padding: 20px; margin: 20px 10px; }
+            
+            .mobile-menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: white;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+        
+        /* Glowing text effect */
+        .glow-text {
+            text-shadow: 0 0 20px #feca57, 0 0 30px #feca57, 0 0 40px #feca57;
+        }
+        
+        /* Pulse animation for important elements */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>
+    <!-- Sticky Header with Music Control -->
+    <div class="sticky-header" id="stickyHeader">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">KC</div>
+                <div class="logo-text">
+                    <div class="logo-title">K Crew Dancers</div>
+                    <div class="logo-tagline">Blue Dance Vibes</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="music-control" id="musicControl">🎵</button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            </div>
+        </div>
+    </div>
+
     <header>
-        <h1>K Crew Dancers</h1>
-        <p>Bringing Fire to the Floor</p>
+        <h1 class="glow-text">K Crew Dancers</h1>
+        <p>💙 Bringing Blue Dance Vibes to Kibabii University 💙</p>
     </header>
 
     <nav>
         <a href="#about">About</a>
-        <a href="#funding">Support Us</a>
+        <a href="#contribute">Contribute</a>
         <a href="#events">Events</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
@@ -39,72 +635,425 @@
 
     <section id="hero" class="hero">
         <div>
-            <h2>Join the K Crew Movement!</h2>
-            <a href="#funding">Support Our Journey</a>
+            <h2>Join the Blue Dance Movement! 💃🕺</h2>
+            <a href="#contribute" class="pulse">Support Our Journey</a>
         </div>
     </section>
 
     <section id="about">
-        <h2>About K Crew</h2>
-        <p>K Crew Dancers is a passionate dance collective based in [Your City], mastering [hip-hop/K-pop/contemporary]. Since [year], we’ve been igniting stages and building community. Your support fuels our dream to compete, create, and inspire!</p>
+        <div class="section-bg">
+            <h2>About K Crew</h2>
+            <p style="font-size: 1.2em; line-height: 1.8; text-align: center;">K Crew Dancers is a passionate dance collective based in <strong>Kibabii University</strong>, mastering the art of <strong>blue dance vibes</strong> and hype choreography that gets everyone moving! Since way back, we've been igniting stages and building community through our electrifying performances with signature blue energy. Your contributions fuel our dream to compete, create, and inspire the next generation of dancers! 💙✨</p>
+        </div>
     </section>
 
-    <section id="funding">
-        <h2>Support K Crew</h2>
-        <p>Your contributions make our performances possible. Here’s how we use funds:</p>
-        <div class="funding-grid">
-            <div class="funding-item">
-                <h3>Registration</h3>
-                <p>Entry fees for competitions like [World Hip-Hop Dance Championship/local events].</p>
+    <section id="contribute">
+        <div class="section-bg">
+            <h2>Support K Crew 💰</h2>
+            <p style="text-align: center; font-size: 1.1em; margin-bottom: 40px;">Your contributions make our blue dance performances possible. Choose a purpose and help us shine brighter! ✨</p>
+            <div class="funding-grid">
+                <div class="funding-item">
+                    <h3>🏆 Competition Registration</h3>
+                    <p>Entry fees for major competitions like World Hip-Hop Dance Championship and local dance battles that showcase our blue dance skills!</p>
+                </div>
+                <div class="funding-item">
+                    <h3>📸 Professional Shooting</h3>
+                    <p>High-quality video and photo shoots to capture our blue dance moves and share our choreography with the world!</p>
+                </div>
+                <div class="funding-item">
+                    <h3>🖨️ Promotion & Printing</h3>
+                    <p>Eye-catching posters, flyers, and exclusive K Crew merch to promote our blue dance brand at events and around campus!</p>
+                </div>
+                <div class="funding-item">
+                    <h3>🎉 Events & Parties</h3>
+                    <p>Hosting epic blue dance showcases, battles, and community parties that bring together dancers from all over Kenya!</p>
+                </div>
+                <div class="funding-item">
+                    <h3>✨ Other Contributions</h3>
+                    <p>Fresh costumes, travel expenses, and intensive training workshops to take our blue dance skills to the next level!</p>
+                </div>
             </div>
-            <div class="funding-item">
-                <h3>Shooting</h3>
-                <p>Professional video/photo shoots to showcase our routines online.</p>
-            </div>
-            <div class="funding-item">
-                <h3>Printing</h3>
-                <p>Posters, flyers, and merch to promote K Crew at events.</p>
-            </div>
-            <div class="funding-item">
-                <h3>Events & Parties</h3>
-                <p>Hosting showcases and community dance parties to connect with fans.</p>
-            </div>
-            <div class="funding-item">
-                <h3>Other Contributions</h3>
-                <p>Costumes, travel, and training workshops to level up our skills.</p>
+
+            <div class="payment-form">
+                <h3 style="text-align: center; color: #feca57;">💙 Make a Blue Contribution 🙌</h3>
+                <form id="contribution-form">
+                    <input type="text" id="name" placeholder="Your Name (e.g., Alex Mwangi)" required>
+                    
+                    <select id="reason" required>
+                        <option value="" disabled selected>Select Reason for Contribution</option>
+                        <option value="Competition Registration">🏆 Competition Registration</option>
+                        <option value="Professional Shooting">📸 Professional Shooting</option>
+                        <option value="Promotion & Printing">🖨️ Promotion & Printing</option>
+                        <option value="Events & Parties">🎉 Events & Parties</option>
+                        <option value="Other Contributions">✨ Other Contributions</option>
+                    </select>
+                    
+                    <input type="tel" id="whatsapp" placeholder="WhatsApp Number (e.g., +254700000000)" required>
+                    
+                    <input type="tel" id="mpesa" placeholder="M-Pesa Number (e.g., 0700000000)" required>
+                    
+                    <input type="number" id="amount" placeholder="Amount (KES)" min="50" required>
+                    
+                    <button type="submit">💙 Initiate Payment</button>
+                </form>
+                <div id="payment-instructions" class="payment-instructions">
+                    <h4>🎉 Payment Instructions</h4>
+                    <p>Asante sana, <strong><span id="display-name"></span></strong>! To complete your <strong><span id="display-reason"></span></strong> contribution of <strong>KES <span id="display-amount"></span></strong>, follow these simple steps:</p>
+                    <ol style="font-size: 1.1em; line-height: 1.6;">
+                        <li>Open M-Pesa on your phone (SIM Toolkit, USSD *334#, or M-Pesa App) 📱</li>
+                        <li>Select <strong>Lipa na M-Pesa</strong> ➡️ <strong>Pay Bill</strong></li>
+                        <li>Enter Business Number: <strong>567890</strong> (K Crew Dancers)</li>
+                        <li>Enter Account Number: <strong><span id="account-number"></span></strong></li>
+                        <li>Enter Amount: <strong>KES <span id="confirm-amount"></span></strong></li>
+                        <li>Enter your M-Pesa PIN and confirm ✅</li>
+                        <li>Wait for SMS confirmation from M-Pesa 📩</li>
+                    </ol>
+                    <p style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                        <strong>Final Step:</strong> WhatsApp the confirmation to <strong><span id="whatsapp-contact"></span></strong> so we can verify your blue contribution and send you a thank you message! 💙🙏
+                    </p>
+                </div>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 20px;">
-            <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" style="background: #ffd700; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Donate Now</a>
-        </p>
     </section>
 
     <section id="events">
-        <h2>Upcoming Events</h2>
-        <p>Join us at our next show or dance party! Check back for updates.</p>
-        <ul>
-            <li>[Event Name] - [Date], [Venue], [City] - <a href="#">Buy Tickets</a></li>
-            <li>K Crew Dance Party - [Date], [Location] - Free entry with donation!</li>
-        </ul>
+        <div class="section-bg">
+            <h2>Upcoming Events 🎭</h2>
+            <p style="text-align: center; font-size: 1.1em;">Join us at our next blue dance show or party! Check back for updates and don't miss the hype! 💙🔥</p>
+            <ul class="events-list">
+                <li><strong>Blue Vibes Dance Championship 2025</strong> - March 15th, University Main Hall - <a href="#">Get Tickets</a> 🎫</li>
+                <li><strong>K Crew Blue Hype Night</strong> - Every Friday, Student Centre - Free entry with any donation! 💃</li>
+                <li><strong>Inter-University Blue Dance Battle</strong> - April 20th, KICC Nairobi - <a href="#">Register Team</a> 🏆</li>
+                <li><strong>Community Blue Dance Outreach</strong> - May 5th, Bungoma Town Square - Free show! 🌟</li>
+            </ul>
+        </div>
     </section>
 
     <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <img src="dance1.jpg" alt="K Crew performing">
-            <img src="dance2.jpg" alt="Crew at event">
-            <img src="dance3.jpg" alt="Behind the scenes">
+        <div class="section-bg">
+            <h2>Gallery 📸</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=400&h=300&fit=crop" alt="K Crew blue dance performance at university event">
+                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=300&fit=crop" alt="Behind the scenes blue dance rehearsal">
+                <img src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=400&h=300&fit=crop" alt="Team building and blue choreography session">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop" alt="Blue dance performance at local competition">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop" alt="K Crew at blue dance workshop">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Community blue dance event">
+            </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@kcrewdancers.com | Instagram: @kcrewdancers | TikTok: @kcrewdancers</p>
-        <p>Want to sponsor us? Reach out to discuss partnerships!</p>
+        <div class="section-bg">
+            <h2>Contact Us 📞</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p>kcrew@kibabii.ac.ke</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📱 Social Media</h4>
+                    <p>Instagram: @kcrewkibabii<br>
+                    TikTok: @kcrewdancers<br>
+                    YouTube: K Crew Dancers</p>
+                </div>
+                <div class="contact-item">
+                    <h4>🤝 Partnerships</h4>
+                    <p>Want to sponsor us?<br>Reach out for collaborations!</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Music Status Indicator -->
+    <div class="music-status" id="musicStatus">
+        🎵 Playing Blue Vibes Instrumental
+    </div>
+
     <footer>
-        <p>&copy; 2025 K Crew Dancers. Powered by Passion.</p>
+        <p>&copy; 2025 K Crew Dancers - Kibabii University. Powered by Blue Dance Vibes! 💙🎭🕺</p>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Keep dancing, keep dreaming, keep inspiring with blue energy! ✨</p>
     </footer>
+
+    <script>
+        // Blue Music Player Class
+        class BlueMusicPlayer {
+            constructor() {
+                this.isPlaying = false;
+                this.audioContext = null;
+                this.oscillator = null;
+                this.gainNode = null;
+                this.initializeAudio();
+            }
+
+            initializeAudio() {
+                try {
+                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    this.gainNode = this.audioContext.createGain();
+                    this.gainNode.connect(this.audioContext.destination);
+                    this.gainNode.gain.value = 0.3;
+                } catch (e) {
+                    console.log('Web Audio API not supported');
+                }
+            }
+
+            playBlueVibes() {
+                if (!this.audioContext) return;
+                
+                if (this.oscillator) {
+                    this.oscillator.stop();
+                }
+
+                // Create blue dance instrumental melody
+                this.oscillator = this.audioContext.createOscillator();
+                this.oscillator.connect(this.gainNode);
+                this.oscillator.type = 'sine';
+                
+                // Blue vibes melody pattern (relaxing instrumental)
+                const melody = [392, 440, 523, 392, 330, 440, 523, 659]; // G4, A4, C5, G4, E4, A4, C5, E5
+                let time = this.audioContext.currentTime;
+                
+                melody.forEach((freq, index) => {
+                    this.oscillator.frequency.setValueAtTime(freq, time + index * 0.6);
+                });
+
+                this.oscillator.start();
+                this.isPlaying = true;
+                
+                // Auto-stop after 5 seconds
+                setTimeout(() => {
+                    if (this.oscillator) {
+                        this.oscillator.stop();
+                        this.oscillator = null;
+                        this.isPlaying = false;
+                        this.updateUI();
+                    }
+                }, 5000);
+                
+                this.updateUI();
+            }
+
+            stop() {
+                if (this.oscillator) {
+                    this.oscillator.stop();
+                    this.oscillator = null;
+                }
+                this.isPlaying = false;
+                this.updateUI();
+            }
+
+            updateUI() {
+                const musicControl = document.getElementById('musicControl');
+                const musicStatus = document.getElementById('musicStatus');
+                
+                if (this.isPlaying) {
+                    musicControl.classList.add('playing');
+                    musicStatus.classList.add('show');
+                } else {
+                    musicControl.classList.remove('playing');
+                    musicStatus.classList.remove('show');
+                }
+            }
+        }
+
+        // Initialize music player
+        const blueMusicPlayer = new BlueMusicPlayer();
+
+        // Music control event listener
+        document.getElementById('musicControl').addEventListener('click', function() {
+            if (blueMusicPlayer.isPlaying) {
+                blueMusicPlayer.stop();
+            } else {
+                blueMusicPlayer.playBlueVibes();
+            }
+        });
+
+        // Sticky Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('stickyHeader');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Enhanced Form Submission
+        document.getElementById('contribution-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const reason = document.getElementById('reason').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const mpesa = document.getElementById('mpesa').value;
+            const amount = document.getElementById('amount').value;
+            
+            // Display payment instructions with animation
+            const instructions = document.getElementById('payment-instructions');
+            instructions.style.display = 'block';
+            instructions.scrollIntoView({ behavior: 'smooth' });
+            
+            document.getElementById('display-name').textContent = name;
+            document.getElementById('display-amount').textContent = amount;
+            document.getElementById('confirm-amount').textContent = amount;
+            document.getElementById('display-reason').textContent = reason;
+            document.getElementById('whatsapp-contact').textContent = whatsapp;
+            document.getElementById('account-number').textContent = name.toUpperCase().replace(/\s+/g, ''); // Remove spaces for account number
+            
+            // Reset form
+            this.reset();
+            
+            // Blue celebration effect
+            setTimeout(() => {
+                createBlueConfetti();
+                showBlueAlert('🎉 Asante sana for supporting K Crew Dancers with blue energy! Your contribution means the world to us! 💙✨');
+            }, 1000);
+        });
+
+        // Blue-themed alert function
+        function showBlueAlert(message) {
+            const alertDiv = document.createElement('div');
+            alertDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(135deg, #667eea, #4834d4);
+                color: white;
+                padding: 2rem 3rem;
+                border-radius: 25px;
+                z-index: 10000;
+                box-shadow: 0 20px 50px rgba(103, 126, 234, 0.4);
+                text-align: center;
+                max-width: 500px;
+                border: 2px solid rgba(254, 202, 87, 0.3);
+                animation: blueAlertIn 0.5s ease-out;
+                font-weight: 600;
+                font-size: 1.1rem;
+            `;
+            alertDiv.textContent = message;
+            
+            // Add close button
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '✕';
+            closeBtn.style.cssText = `
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            `;
+            closeBtn.onmouseover = () => closeBtn.style.color = '#feca57';
+            closeBtn.onmouseout = () => closeBtn.style.color = 'white';
+            closeBtn.onclick = () => document.body.removeChild(alertDiv);
+            
+            alertDiv.appendChild(closeBtn);
+            document.body.appendChild(alertDiv);
+            
+            // Auto-remove after 6 seconds
+            setTimeout(() => {
+                if (document.body.contains(alertDiv)) {
+                    alertDiv.style.animation = 'blueAlertOut 0.5s ease-in';
+                    setTimeout(() => {
+                        if (document.body.contains(alertDiv)) {
+                            document.body.removeChild(alertDiv);
+                        }
+                    }, 500);
+                }
+            }, 6000);
+        }
+
+        // Blue confetti celebration
+        function createBlueConfetti() {
+            const colors = ['#667eea', '#4834d4', '#feca57', '#ff9ff3'];
+            const emojis = ['💙', '🎵', '🎶', '💃', '🕺', '✨'];
+            
+            for (let i = 0; i < 25; i++) {
+                const confetti = document.createElement('div');
+                const isEmoji = Math.random() > 0.5;
+                
+                confetti.textContent = isEmoji ? emojis[Math.floor(Math.random() * emojis.length)] : '●';
+                confetti.style.cssText = `
+                    position: fixed;
+                    top: -10px;
+                    left: ${Math.random() * window.innerWidth}px;
+                    font-size: ${isEmoji ? '2rem' : '1rem'};
+                    color: ${isEmoji ? 'inherit' : colors[Math.floor(Math.random() * colors.length)]};
+                    z-index: 5000;
+                    pointer-events: none;
+                    animation: blueConfettiFall ${3 + Math.random() * 2}s linear forwards;
+                `;
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    if (document.body.contains(confetti)) {
+                        document.body.removeChild(confetti);
+                    }
+                }, 5000);
+            }
+        }
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes blueConfettiFall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+            @keyframes blueAlertIn {
+                from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            }
+            @keyframes blueAlertOut {
+                from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to funding items
+            const fundingItems = document.querySelectorAll('.funding-item');
+            fundingItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) rotate(2deg)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg)';
+                });
+            });
+
+            // Add entrance animations
+            const cards = document.querySelectorAll('.funding-item, .contact-item');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        mobileMenuToggle.addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            if (nav.style.display === 'none') {
+                nav.style.display = 'block';
+            } else {
+                nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    </script>
 </body>
 </html>
