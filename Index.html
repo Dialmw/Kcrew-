@@ -3,36 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K Crew Dancers - Blue Dance Vibes | Kibabii University</title>
-    <meta name="description" content="K Crew Dancers - Premier dance collective at Kibabii University bringing blue dance vibes to Kenya. Professional performances, workshops, and community events.">
-    <meta name="keywords" content="K Crew Dancers, Kibabii University, dance, blue dance vibes, Kenya, hip-hop, contemporary, performances">
+    <title>K Crew Dancers - Urban Dance Energy | Kibabii University</title>
+    <meta name="description" content="K Crew Dancers - Premier dance collective at Kibabii University bringing urban dance energy to Kenya. Professional performances, workshops, and community events.">
+    <meta name="keywords" content="K Crew Dancers, Kibabii University, dance, hip-hop, contemporary, performances, Kenya, dance crew">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
             font-family: 'Poppins', sans-serif; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4834d4 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #3b82f6 50%, #1d4ed8 75%, #1e40af 100%);
+            background-size: 400% 400%;
+            animation: gradient-bg 12s ease infinite;
             color: #fff; 
             overflow-x: hidden;
             min-height: 100vh;
+            font-size: 14px;
         }
 
-        /* Sticky Header with Slideshow */
+        @keyframes gradient-bg {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 25% 75%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 75% 25%; }
+        }
+
+        /* Sticky Header with Image Background */
         .main-header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, rgba(103,126,234,0.95), rgba(72,52,212,0.95));
+            background: linear-gradient(135deg, rgba(30,60,114,0.95), rgba(42,82,152,0.95)), 
+                        url('https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             backdrop-filter: blur(20px);
             color: #fff;
-            padding: 15px 20px;
+            padding: 10px 15px;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(103, 126, 234, 0.4);
+            box-shadow: 0 4px 25px rgba(30, 60, 114, 0.8);
             transition: all 0.3s ease;
-            border-bottom: 2px solid rgba(254, 202, 87, 0.3);
+            border-bottom: 3px solid rgba(59, 130, 246, 0.6);
         }
 
         .header-content {
@@ -41,37 +55,44 @@
             display: grid;
             grid-template-columns: auto 1fr auto;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af, #2563eb);
+            background-size: 300% 300%;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: 900;
-            font-size: 1.4rem;
-            box-shadow: 0 4px 15px rgba(254, 202, 87, 0.4);
-            animation: logo-pulse 3s ease-in-out infinite;
+            font-size: 1.8rem;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            animation: logo-pulse 2s ease-in-out infinite, gradient-shift 4s ease-in-out infinite;
+            border: 3px solid rgba(255,255,255,0.3);
         }
 
         @keyframes logo-pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(254, 202, 87, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 8px 25px rgba(254, 202, 87, 0.6); }
+            0%, 100% { transform: scale(1); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6); }
+            50% { transform: scale(1.1); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.8); }
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .logo-text h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
             margin: 0;
             line-height: 1;
@@ -79,8 +100,8 @@
         }
 
         .logo-text .tagline {
-            font-size: 0.8rem;
-            color: #feca57;
+            font-size: 0.7rem;
+            color: #60a5fa;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -88,19 +109,19 @@
         }
 
         @keyframes tagline-glow {
-            from { color: #feca57; text-shadow: 0 0 5px rgba(254,202,87,0.5); }
-            to { color: #ff9ff3; text-shadow: 0 0 15px rgba(255,159,243,0.8); }
+            from { color: #60a5fa; text-shadow: 0 0 5px rgba(96,165,250,0.5); }
+            to { color: #93c5fd; text-shadow: 0 0 15px rgba(147,197,253,0.8); }
         }
 
-        /* Slideshow in Header */
+        /* YouTube-style Enhanced Slideshow in Header */
         .header-slideshow {
             position: relative;
-            width: 400px;
-            height: 60px;
-            border-radius: 15px;
+            width: 600px;
+            height: 150px;
+            border-radius: 25px;
             overflow: hidden;
-            border: 2px solid rgba(254, 202, 87, 0.3);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 4px solid rgba(59, 130, 246, 0.5);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
         }
 
         .slideshow-container {
@@ -114,7 +135,7 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1.2s ease-in-out;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -129,49 +150,49 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
-            padding: 5px 10px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
         }
 
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .music-control {
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(254, 202, 87, 0.4);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
             position: relative;
         }
 
         .music-control svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             fill: white;
             transition: all 0.3s ease;
         }
 
         .music-control:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(254, 202, 87, 0.6);
+            transform: scale(1.15);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.7);
         }
 
         .music-control.playing {
             animation: music-pulse 0.8s ease-in-out infinite;
-            background: linear-gradient(135deg, #32cd32, #00ff00);
+            background: linear-gradient(135deg, #10b981, #059669);
         }
 
         @keyframes music-pulse {
@@ -180,8 +201,8 @@
         }
 
         .menu-toggle {
-            background: linear-gradient(135deg, #667eea, #4834d4);
-            border: 2px solid rgba(254, 202, 87, 0.3);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border: 2px solid rgba(59, 130, 246, 0.3);
             color: white;
             width: 50px;
             height: 50px;
@@ -193,18 +214,18 @@
         }
 
         .menu-toggle:hover {
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
             transform: rotate(90deg);
         }
 
         /* Auto-changing tagline in hero */
         .auto-tagline {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: 600;
-            color: #a8e6cf;
+            color: #93c5fd;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: auto-glow 3s ease-in-out infinite;
-            min-height: 40px;
+            min-height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -212,16 +233,16 @@
         }
 
         @keyframes auto-glow {
-            0%, 100% { color: #a8e6cf; text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 15px rgba(168,230,207,0.5); }
-            50% { color: #88d8c0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 25px rgba(136,216,192,0.8); }
+            0%, 100% { color: #93c5fd; text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 15px rgba(147,197,253,0.5); }
+            50% { color: #60a5fa; text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 25px rgba(96,165,250,0.8); }
         }
 
         /* Hero Section */
         .hero-section {
-            margin-top: 100px;
+            margin-top: 180px;
             text-align: center;
-            padding: 80px 20px 60px;
-            background: linear-gradient(135deg, rgba(103,126,234,0.1), rgba(72,52,212,0.1));
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, rgba(30,60,114,0.1), rgba(29,78,216,0.1));
             position: relative;
             overflow: hidden;
         }
@@ -233,7 +254,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff10"><circle cx="10" cy="10" r="1"/><circle cx="90" cy="20" r="1"/><circle cx="30" cy="80" r="1"/><circle cx="70" cy="60" r="1"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2360a5fa20"><circle cx="10" cy="10" r="1"/><circle cx="90" cy="20" r="1"/><circle cx="30" cy="80" r="1"/><circle cx="70" cy="60" r="1"/></svg>');
             animation: float-bg 20s linear infinite;
         }
 
@@ -243,9 +264,9 @@
         }
 
         .hero-title {
-            font-size: 4.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
             animation: hero-glow 3s ease-in-out infinite alternate;
             position: relative;
@@ -254,42 +275,62 @@
 
         @keyframes hero-glow {
             from { text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.3); }
-            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 40px rgba(254,202,87,0.5), 0 0 60px rgba(255,159,243,0.3); }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 40px rgba(59, 130, 246,0.5), 0 0 60px rgba(96,165,250,0.3); }
         }
 
         /* Navigation */
         .main-nav {
-            background: rgba(72, 52, 212, 0.95);
-            padding: 20px;
+            background: linear-gradient(135deg, rgba(30,60,114,0.95), rgba(29,78,216,0.95));
+            padding: 15px;
             text-align: center;
             backdrop-filter: blur(15px);
-            border-bottom: 2px solid rgba(254, 202, 87, 0.3);
+            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
             position: sticky;
-            top: 100px;
+            top: 180px;
             z-index: 999;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .meeting-time {
+            color: #93c5fd;
+            font-weight: 700;
+            font-size: 0.9rem;
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.2));
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid rgba(59, 130, 246, 0.4);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
         }
 
         .nav-links {
             display: flex;
-            justify-content: center;
-            gap: 30px;
+            justify-content: flex-end;
+            gap: 20px;
             flex-wrap: wrap;
-            max-width: 1000px;
-            margin: 0 auto;
         }
 
         .nav-link {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            padding: 12px 25px;
+            font-size: 1rem;
+            padding: 10px 20px;
             border-radius: 25px;
             transition: all 0.3s ease;
             cursor: pointer;
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.2));
         }
 
         .nav-link::before {
@@ -299,46 +340,46 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(254,202,87,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
             transition: left 0.5s;
         }
 
         .nav-link:hover {
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(254, 202, 87, 0.4);
-            border-color: rgba(255,255,255,0.3);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+            border-color: rgba(147,197,253,0.3);
         }
 
         .nav-link:hover::before {
             left: 100%;
         }
 
-        /* Main Content Cards */
+        /* Extended Main Content */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 60px 20px;
+            gap: 30px;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .content-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(29,78,216,0.05));
             backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 40px;
-            border: 2px solid rgba(103, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
         .content-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(103, 126, 234, 0.4);
-            border-color: #feca57;
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
+            border-color: #60a5fa;
         }
 
         .content-card::before {
@@ -348,7 +389,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(254,202,87,0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(59,130,246,0.1), transparent);
             transform: rotate(45deg);
             animation: card-shine 10s linear infinite;
         }
@@ -364,10 +405,10 @@
         }
 
         .card-title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #feca57, #ff9ff3, #667eea);
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -381,32 +422,50 @@
         }
 
         .card-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 0.95rem;
+            line-height: 1.7;
             color: rgba(255,255,255,0.9);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .cta-button {
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
-            color: #000;
-            padding: 15px 30px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #fff;
+            padding: 12px 25px;
             border: none;
-            border-radius: 30px;
+            border-radius: 25px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 8px 20px rgba(254, 202, 87, 0.3);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(254, 202, 87, 0.5);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Extended Content Sections */
+        .extended-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .full-width-card {
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05));
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
         }
 
         /* Modal Styles */
@@ -436,38 +495,50 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #667eea, #4834d4);
-            margin: 2rem;
-            padding: 3rem;
+            background: linear-gradient(135deg, #1e40af, #1d4ed8);
+            margin: 1.5rem;
+            padding: 2.5rem;
             border-radius: 25px;
-            max-width: 1000px;
+            max-width: 900px;
             width: 100%;
             max-height: 85vh;
             overflow-y: auto;
             position: relative;
             animation: modalSlideIn 0.5s ease-out;
-            border: 2px solid rgba(254, 202, 87, 0.3);
-            box-shadow: 0 25px 60px rgba(103, 126, 234, 0.5);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 25px 60px rgba(30, 64, 175, 0.5);
         }
 
         @keyframes modalSlideIn {
-            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
+            from { transform: translateY(-30px) scale(0.9); opacity: 0; }
             to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        .modal-crew-image {
+            width: 100%;
+            height: 150px;
+            background-image: url('https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            border: 2px solid rgba(59, 130, 246, 0.3);
         }
 
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border: 2px solid rgba(254, 202, 87, 0.3);
-            font-size: 1.5rem;
+            background: rgba(59,130,246,0.2);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            font-size: 1.3rem;
             cursor: pointer;
             color: white;
             transition: all 0.3s ease;
             z-index: 10;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -475,17 +546,17 @@
         }
 
         .modal-close:hover {
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
-            color: #000;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #fff;
             transform: rotate(90deg) scale(1.1);
             border-color: transparent;
         }
 
         .modal h2 {
-            font-size: 2.8em;
-            margin-bottom: 2rem;
+            font-size: 2.2em;
+            margin-bottom: 1.5rem;
             text-align: center;
-            background: linear-gradient(135deg, #feca57, #ff9ff3, #ffffff);
+            background: linear-gradient(135deg, #60a5fa, #3b82f6, #ffffff);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -504,56 +575,57 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
         }
 
         .gallery-toggle {
-            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
+            padding: 10px 20px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(254, 202, 87, 0.3);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
         .gallery-toggle:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(254, 202, 87, 0.5);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
         }
 
         .gallery { 
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px; 
+            gap: 15px; 
             transition: all 0.6s ease;
         }
 
         .gallery.expanded {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.5);
             z-index: 10;
         }
 
         .gallery img { 
             width: 100%; 
-            height: 250px;
+            height: 200px;
             object-fit: cover;
             transition: all 0.4s ease;
             filter: brightness(0.9) contrast(1.1);
@@ -571,7 +643,7 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
-            padding: 15px;
+            padding: 12px;
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
@@ -597,52 +669,52 @@
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
         }
 
         .stat-item {
-            background: rgba(255,255,255,0.1);
-            padding: 25px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1));
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
-            border: 2px solid rgba(254, 202, 87, 0.3);
+            border: 2px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
 
         .stat-item:hover {
-            transform: translateY(-5px);
-            border-color: #feca57;
-            box-shadow: 0 15px 30px rgba(254, 202, 87, 0.3);
+            transform: translateY(-4px);
+            border-color: #60a5fa;
+            box-shadow: 0 12px 25px rgba(59, 130, 246, 0.3);
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
-            color: #feca57;
-            margin-bottom: 10px;
+            color: #60a5fa;
+            margin-bottom: 8px;
         }
 
         /* Form Styles */
         .payment-form { 
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-            padding: 2.5rem; 
-            border-radius: 25px; 
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1));
+            padding: 2rem; 
+            border-radius: 20px; 
+            border: 2px solid rgba(59, 130, 246, 0.3);
             backdrop-filter: blur(15px);
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         
         .payment-form input, .payment-form select { 
             width: 100%; 
-            padding: 15px; 
-            margin: 12px 0; 
-            border: 2px solid rgba(255,255,255,0.3); 
-            border-radius: 12px;
-            background: rgba(255,255,255,0.1);
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 2px solid rgba(59,130,246,0.3); 
+            border-radius: 10px;
+            background: rgba(59,130,246,0.1);
             color: #fff;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
@@ -650,10 +722,10 @@
         
         .payment-form input:focus, .payment-form select:focus {
             outline: none;
-            border-color: #feca57;
-            box-shadow: 0 0 20px rgba(254,202,87,0.4);
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
+            border-color: #60a5fa;
+            box-shadow: 0 0 15px rgba(96,165,250,0.4);
+            background: rgba(59,130,246,0.2);
+            transform: translateY(-1px);
         }
         
         .payment-form input::placeholder {
@@ -662,31 +734,31 @@
         }
 
         .payment-form select option {
-            background: #4834d4;
+            background: #1d4ed8;
             color: white;
-            padding: 10px;
+            padding: 8px;
         }
         
         .payment-form button { 
-            background: linear-gradient(135deg, #feca57, #ff9ff3); 
-            color: #000; 
-            padding: 16px 30px; 
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+            color: #fff; 
+            padding: 14px 25px; 
             border: none; 
-            border-radius: 30px; 
+            border-radius: 25px; 
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 800;
             width: 100%;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 1rem;
-            box-shadow: 0 10px 25px rgba(254, 202, 87, 0.3);
+            margin-top: 0.8rem;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
         }
 
         .payment-form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(254, 202, 87, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(59, 130, 246, 0.5);
         }
 
         /* Playing Indicator */
@@ -695,12 +767,12 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, #32cd32, #00ff00);
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             z-index: 999;
             display: none;
             animation: pulse-green 2s ease-in-out infinite;
@@ -712,49 +784,101 @@
         }
 
         @keyframes pulse-green {
-            0%, 100% { background: linear-gradient(135deg, #32cd32, #00ff00); }
-            50% { background: linear-gradient(135deg, #00ff00, #32cd32); }
+            0%, 100% { background: linear-gradient(135deg, #10b981, #059669); }
+            50% { background: linear-gradient(135deg, #059669, #10b981); }
+        }
+
+        /* Mobile dropdown navigation */
+        .mobile-nav-dropdown {
+            position: fixed;
+            top: 100px;
+            right: 15px;
+            background: linear-gradient(135deg, rgba(30,60,114,0.98), rgba(29,78,216,0.98));
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid rgba(59, 130, 246, 0.5);
+            backdrop-filter: blur(20px);
+            transform: translateY(-20px) scale(0.9);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1500;
+            display: none;
+            min-width: 200px;
+        }
+
+        .mobile-nav-dropdown.show {
+            display: block;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .mobile-nav-dropdown .nav-link {
+            display: block;
+            margin: 5px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 12px 15px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            body { font-size: 12px; }
+            
             .header-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 15px;
+                gap: 10px;
             }
 
             .header-slideshow {
                 width: 100%;
                 max-width: 350px;
+                height: 100px;
             }
 
             .menu-toggle {
                 display: block;
+                position: fixed;
+                top: 15px;
+                right: 15px;
+                z-index: 1600;
             }
 
             .hero-title {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
+            }
+
+            .hero-section {
+                margin-top: 200px;
+            }
+
+            .main-nav {
+                top: 200px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
             }
 
             .nav-links {
-                flex-direction: column;
-                gap: 15px;
+                display: none;
             }
 
             .main-content {
                 grid-template-columns: 1fr;
-                gap: 25px;
-                padding: 30px 15px;
+                gap: 20px;
+                padding: 25px 15px;
             }
 
             .content-card {
-                padding: 25px;
+                padding: 20px;
             }
 
             .modal-content {
                 margin: 1rem;
-                padding: 2rem;
+                padding: 1.5rem;
             }
 
             .gallery {
@@ -782,21 +906,21 @@
     </style>
 </head>
 <body>
-    <!-- Sticky Header with Slideshow -->
+    <!-- Sticky Header with Enhanced Slideshow -->
     <header class="main-header">
         <div class="header-content">
             <div class="logo-section">
                 <div class="logo-icon">KC</div>
                 <div class="logo-text">
                     <h1>K Crew Dancers</h1>
-                    <div class="tagline">BLUE DANCE VIBES</div>
+                    <div class="tagline">URBAN DANCE ENERGY</div>
                 </div>
             </div>
             
             <div class="header-slideshow">
                 <div class="slideshow-container">
                     <div class="slide active" style="background-image: url('https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true');">
-                        <div class="slide-overlay">K Crew Dancers - Blue Dance Vibes</div>
+                        <div class="slide-overlay">K Crew Dancers - Urban Dance Energy</div>
                     </div>
                     <div class="slide" style="background-image: url('https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true'); filter: hue-rotate(45deg);">
                         <div class="slide-overlay">K Crew Performance 💃</div>
@@ -805,7 +929,7 @@
                         <div class="slide-overlay">Team Choreography 🕺</div>
                     </div>
                     <div class="slide" style="background-image: url('https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true'); filter: hue-rotate(180deg);">
-                        <div class="slide-overlay">Blue Energy Show ⚡</div>
+                        <div class="slide-overlay">Hip-Hop Energy Show ⚡</div>
                     </div>
                 </div>
             </div>
@@ -825,20 +949,38 @@
         </div>
     </header>
 
+    <!-- Mobile Navigation Dropdown -->
+    <div class="mobile-nav-dropdown" id="mobileNavDropdown">
+        <a class="nav-link" onclick="openModal('aboutModal'); toggleMobileNav()">📋 About Us</a>
+        <a class="nav-link" onclick="openModal('stylesModal'); toggleMobileNav()">🎭 Dance Styles</a>
+        <a class="nav-link" onclick="openModal('workshopsModal'); toggleMobileNav()">🏫 Workshops</a>
+        <a class="nav-link" onclick="openModal('contributeModal'); toggleMobileNav()">💰 Contribute</a>
+        <a class="nav-link" onclick="openModal('eventsModal'); toggleMobileNav()">🎪 Events</a>
+        <a class="nav-link" onclick="openModal('galleryModal'); toggleMobileNav()">📸 Gallery</a>
+        <a class="nav-link" onclick="openModal('contactModal'); toggleMobileNav()">📞 Contact</a>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero-section">
         <h1 class="hero-title">K Crew Dancers</h1>
-        <div class="auto-tagline" id="autoTagline">💙 Bringing Blue Dance Vibes to Kibabii University 💙</div>
+        <div class="auto-tagline" id="autoTagline">🎭 Bringing Urban Dance Energy to Kibabii University 🎭</div>
     </section>
 
-    <!-- Navigation -->
+    <!-- Navigation with Meeting Time -->
     <nav class="main-nav">
-        <div class="nav-links">
-            <a class="nav-link" onclick="openModal('aboutModal')">📋 About Us</a>
-            <a class="nav-link" onclick="openModal('contributeModal')">💰 Contribute</a>
-            <a class="nav-link" onclick="openModal('eventsModal')">🎭 Events</a>
-            <a class="nav-link" onclick="openModal('galleryModal')">📸 Gallery</a>
-            <a class="nav-link" onclick="openModal('contactModal')">📞 Contact</a>
+        <div class="nav-container">
+            <div class="meeting-time">
+                📅 Meet Us: Mon-Sat 5-7 PM @ Student Center
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" onclick="openModal('aboutModal')">📋 About Us</a>
+                <a class="nav-link" onclick="openModal('stylesModal')">🎭 Dance Styles</a>
+                <a class="nav-link" onclick="openModal('workshopsModal')">🏫 Workshops</a>
+                <a class="nav-link" onclick="openModal('contributeModal')">💰 Contribute</a>
+                <a class="nav-link" onclick="openModal('eventsModal')">🎪 Events</a>
+                <a class="nav-link" onclick="openModal('galleryModal')">📸 Gallery</a>
+                <a class="nav-link" onclick="openModal('contactModal')">📞 Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -849,7 +991,7 @@
             <div class="card-content">
                 <h2 class="card-title">About K Crew Dancers</h2>
                 <p class="card-text">
-                    Welcome to K Crew Dancers, Kibabii University's premier dance collective! We're a passionate group of talented dancers specializing in <strong>blue dance vibes</strong> - our signature fusion of hip-hop, contemporary, and Afrobeat styles that electrifies audiences across Kenya.
+                    Welcome to K Crew Dancers, Kibabii University's premier dance collective! We're a passionate group of talented dancers specializing in <strong>urban dance energy</strong> - our signature fusion of hip-hop, contemporary, and Afrobeat styles that electrifies audiences across Kenya.
                 </p>
                 <p class="card-text">
                     Founded with the mission to spread positive energy through movement, we've performed at over 100+ events, won 8 major competitions, and built a community of 15+ dedicated dancers who live and breathe the art of dance.
@@ -871,20 +1013,20 @@
         <!-- Join Movement Card -->
         <div class="content-card">
             <div class="card-content">
-                <h2 class="card-title">Join the Blue Dance Movement! 💃🕺</h2>
+                <h2 class="card-title">Join the Dance Movement! 💃🕺</h2>
                 <p class="card-text">
-                    Ready to experience the electrifying world of blue dance vibes? Whether you're a seasoned dancer or just starting your journey, K Crew welcomes passionate individuals who want to push boundaries and create magic through movement.
+                    Ready to experience the electrifying world of urban dance energy? Whether you're a seasoned dancer or just starting your journey, K Crew welcomes passionate individuals who want to push boundaries and create magic through movement.
                 </p>
                 <a href="#" onclick="openModal('contributeModal')" class="cta-button">Support Our Journey</a>
                 
-                <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px; border: 2px solid rgba(254, 202, 87, 0.3);">
-                    <h3 style="color: #feca57; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                <div style="margin-top: 25px; padding: 15px; background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <h3 style="color: #60a5fa; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
                         🤝 Partnership Opportunities
                     </h3>
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6;">
+                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; font-size: 0.9rem;">
                         Looking to sponsor the future of dance in Kenya? Partner with K Crew Dancers and be part of our journey to inspire the next generation of performers.
                     </p>
-                    <a href="#" onclick="openModal('contactModal')" style="color: #ff9ff3; font-weight: 600; text-decoration: underline; margin-top: 10px; display: inline-block;">
+                    <a href="#" onclick="openModal('contactModal')" style="color: #93c5fd; font-weight: 600; text-decoration: underline; margin-top: 8px; display: inline-block;">
                         Get In Touch →
                     </a>
                 </div>
@@ -892,9 +1034,74 @@
         </div>
     </main>
 
+    <!-- Extended Content Sections -->
+    <section class="extended-content">
+        <div class="full-width-card">
+            <h2 style="text-align: center; color: #60a5fa; margin-bottom: 20px;">Our Dance Styles & Specialties</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.2);">
+                    <h3 style="color: #93c5fd; margin-bottom: 10px;">🎤 Hip-Hop Fusion</h3>
+                    <p style="font-size: 0.9rem;">Urban street moves with African rhythms creating explosive energy</p>
+                </div>
+                <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.2);">
+                    <h3 style="color: #93c5fd; margin-bottom: 10px;">🌊 Contemporary Flow</h3>
+                    <p style="font-size: 0.9rem;">Smooth transitions and emotional storytelling through movement</p>
+                </div>
+                <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.2);">
+                    <h3 style="color: #93c5fd; margin-bottom: 10px;">🥁 Afrobeat Energy</h3>
+                    <p style="font-size: 0.9rem;">Traditional African dance with modern choreographic elements</p>
+                </div>
+                <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.2);">
+                    <h3 style="color: #93c5fd; margin-bottom: 10px;">⚡ Freestyle Battles</h3>
+                    <p style="font-size: 0.9rem;">Improvised dance competitions showcasing individual creativity</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-card">
+            <h2 style="text-align: center; color: #60a5fa; margin-bottom: 20px;">Our Impact & Community Outreach</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div>
+                    <h3 style="color: #93c5fd; margin-bottom: 15px;">🏫 School Programs</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">We've taught over 500+ students across 20+ schools in Bungoma County, introducing them to the joy of dance and building confidence through movement.</p>
+                </div>
+                <div>
+                    <h3 style="color: #93c5fd; margin-bottom: 15px;">🌍 Community Events</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">From local festivals to national competitions, K Crew has performed at major events, bringing communities together through the universal language of dance.</p>
+                </div>
+                <div>
+                    <h3 style="color: #93c5fd; margin-bottom: 15px;">🎓 Mentorship</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Our senior members mentor young dancers, helping them develop not just technical skills but also leadership qualities and artistic expression.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-card">
+            <h2 style="text-align: center; color: #60a5fa; margin-bottom: 20px;">Upcoming Projects & Goals</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div style="padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 15px; border-left: 4px solid #60a5fa;">
+                    <h4 style="color: #93c5fd; margin-bottom: 10px;">🎬 Documentary Project</h4>
+                    <p style="font-size: 0.9rem;">Creating a documentary about dance culture in Kenyan universities</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 15px; border-left: 4px solid #60a5fa;">
+                    <h4 style="color: #93c5fd; margin-bottom: 10px;">🏆 National Tour</h4>
+                    <p style="font-size: 0.9rem;">Planning a 15-city tour across Kenya to showcase our choreography</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 15px; border-left: 4px solid #60a5fa;">
+                    <h4 style="color: #93c5fd; margin-bottom: 10px;">🎪 Dance Festival</h4>
+                    <p style="font-size: 0.9rem;">Organizing the first-ever Bungoma Dance Festival in 2025</p>
+                </div>
+                <div style="padding: 20px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.05)); border-radius: 15px; border-left: 4px solid #60a5fa;">
+                    <h4 style="color: #93c5fd; margin-bottom: 10px;">📚 Training Academy</h4>
+                    <p style="font-size: 0.9rem;">Establishing a formal dance academy for structured learning programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Playing Indicator -->
     <div class="playing-indicator" id="playingIndicator">
-        🎵 Playing Blue Vibes Music - K Crew Dancers 🎵
+        🎵 Playing K Crew Background Music - Urban Dance Energy 🎵
     </div>
 
     <!-- MODALS -->
@@ -902,38 +1109,152 @@
     <!-- About Modal -->
     <div id="aboutModal" class="modal">
         <div class="modal-content">
+            <div class="modal-crew-image"></div>
             <button class="modal-close" onclick="closeModal('aboutModal')">&times;</button>
-            <h2>About K Crew Dancers 💙</h2>
+            <h2>About K Crew Dancers 🎭</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 30px 0;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3);">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">🏆</div>
-                    <h3 style="color: #feca57; margin-bottom: 10px;">Our Achievements</h3>
-                    <p>8 major competition wins, 100+ live performances, featured in Kenya's top dance festivals</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 25px 0;">
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 12px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <div style="font-size: 2.5rem; margin-bottom: 12px;">🏆</div>
+                    <h3 style="color: #60a5fa; margin-bottom: 8px; font-size: 1.1rem;">Our Achievements</h3>
+                    <p style="font-size: 0.85rem;">8 major competition wins, 100+ live performances, featured in Kenya's top dance festivals</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3);">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">🎭</div>
-                    <h3 style="color: #feca57; margin-bottom: 10px;">Our Styles</h3>
-                    <p>Hip-Hop Fusion, Contemporary Flow, Afrobeat Energy, and our signature Blue Dance Vibes</p>
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 12px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <div style="font-size: 2.5rem; margin-bottom: 12px;">🎭</div>
+                    <h3 style="color: #60a5fa; margin-bottom: 8px; font-size: 1.1rem;">Our Styles</h3>
+                    <p style="font-size: 0.85rem;">Hip-Hop Fusion, Contemporary Flow, Afrobeat Energy, and Freestyle Battles</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3);">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">🌟</div>
-                    <h3 style="color: #feca57; margin-bottom: 10px;">Our Mission</h3>
-                    <p>Spreading positive energy through dance, building community, and inspiring the next generation</p>
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 12px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <div style="font-size: 2.5rem; margin-bottom: 12px;">🌟</div>
+                    <h3 style="color: #60a5fa; margin-bottom: 8px; font-size: 1.1rem;">Our Mission</h3>
+                    <p style="font-size: 0.85rem;">Spreading positive energy through dance, building community, and inspiring the next generation</p>
                 </div>
             </div>
 
-            <div style="background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); padding: 2.5rem; border-radius: 20px; border: 2px solid rgba(254, 202, 87, 0.3); margin-top: 30px;">
-                <h3 style="color: #feca57; text-align: center; margin-bottom: 20px; font-size: 1.5rem;">What Makes Us Special</h3>
-                <p style="text-align: center; font-size: 1.1rem; line-height: 1.8;">
-                    At K Crew Dancers, we don't just perform - we create experiences. Our blue dance vibes concept combines the raw energy of street dance with the emotional depth of contemporary movement, creating something uniquely powerful. Every performance tells a story, every workshop builds character, and every member becomes part of a family that extends far beyond the dance floor.
+            <div style="background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(29,78,216,0.05)); padding: 2rem; border-radius: 15px; border: 2px solid rgba(59, 130, 246, 0.3); margin-top: 25px;">
+                <h3 style="color: #60a5fa; text-align: center; margin-bottom: 15px; font-size: 1.2rem;">What Makes Us Special</h3>
+                <p style="text-align: center; font-size: 0.95rem; line-height: 1.7;">
+                    At K Crew Dancers, we don't just perform - we create experiences. Our urban dance energy concept combines the raw power of street dance with the emotional depth of contemporary movement, creating something uniquely powerful.
                 </p>
             </div>
+        </div>
+    </div>
 
-            <div style="margin-top: 30px; text-align: center;">
-                <h3 style="color: #feca57; margin-bottom: 20px;">Join Our Family</h3>
-                <p style="margin-bottom: 20px;">Ready to be part of something extraordinary? We're always looking for passionate dancers to join our crew.</p>
-                <a href="#" onclick="closeModal('aboutModal'); openModal('contactModal');" class="cta-button">Get Started Today</a>
+    <!-- Dance Styles Modal -->
+    <div id="stylesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-crew-image"></div>
+            <button class="modal-close" onclick="closeModal('stylesModal')">&times;</button>
+            <h2>Our Dance Styles 🎭</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 25px 0;">
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.5); cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🔥</div>
+                    <h3 style="color: #dbeafe; margin-bottom: 10px;">Dancehall</h3>
+                    <p style="font-size: 0.9rem;">Caribbean vibes with urban energy - our signature dancehall moves that set the floor on fire!</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.5); cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
+                    <h3 style="color: #dbeafe; margin-bottom: 10px;">Hype Dance</h3>
+                    <p style="font-size: 0.9rem;">High-energy moves that get crowds jumping - pure adrenaline and excitement!</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.5); cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🎶</div>
+                    <h3 style="color: #dbeafe; margin-bottom: 10px;">Amapiano</h3>
+                    <p style="font-size: 0.9rem;">South African beats with smooth moves - perfect blend of rhythm and style!</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.5); cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🥁</div>
+                    <h3 style="color: #dbeafe; margin-bottom: 10px;">Lingala</h3>
+                    <p style="font-size: 0.9rem;">Congolese rhythms with flowing movements - cultural fusion at its finest!</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.5); cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
+                    <h3 style="color: #dbeafe; margin-bottom: 10px;">TikTok Challenges</h3>
+                    <p style="font-size: 0.9rem;">Viral moves and trending challenges - we master them all and create our own!</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.5); cursor: pointer; transition: all 0.3s ease;" onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🎤</div>
+                    <h3 style="color: #dbeafe; margin-bottom: 10px;">Hip-Hop Fusion</h3>
+                    <p style="font-size: 0.9rem;">Urban street moves with African rhythms - our signature style that defines K Crew!</p>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(30,64,175,0.3)); padding: 2rem; border-radius: 15px; border: 2px solid rgba(59, 130, 246, 0.5); margin-top: 25px; text-align: center;">
+                <h3 style="color: #dbeafe; margin-bottom: 15px;">Want to Learn These Styles?</h3>
+                <p style="margin-bottom: 20px; font-size: 0.95rem;">Join our workshops every Monday-Saturday, 5-7 PM at the Student Center!</p>
+                <button onclick="closeModal('stylesModal'); openModal('workshopsModal');" class="cta-button">View Workshop Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workshops Modal -->
+    <div id="workshopsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-crew-image"></div>
+            <button class="modal-close" onclick="closeModal('workshopsModal')">&times;</button>
+            <h2>Dance Workshops 🏫</h2>
+            <p style="text-align: center; font-size: 1rem; margin-bottom: 25px;">Learn from the best! Join our expert-led workshops every week.</p>
+            
+            <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 25px; border-radius: 20px; border: 3px solid rgba(59, 130, 246, 0.6); margin-bottom: 25px;">
+                <h3 style="color: #dbeafe; text-align: center; margin-bottom: 15px; font-size: 1.3rem;">📅 Weekly Schedule</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="background: linear-gradient(135deg, #1d4ed8, #2563eb); padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #bfdbfe; margin-bottom: 8px;">Monday</h4>
+                        <p style="font-size: 0.9rem;">Hip-Hop Basics</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">5:00 - 7:00 PM</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #1d4ed8, #2563eb); padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #bfdbfe; margin-bottom: 8px;">Tuesday</h4>
+                        <p style="font-size: 0.9rem;">Dancehall Energy</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">5:00 - 7:00 PM</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #1d4ed8, #2563eb); padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #bfdbfe; margin-bottom: 8px;">Wednesday</h4>
+                        <p style="font-size: 0.9rem;">Amapiano Flow</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">5:00 - 7:00 PM</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #1d4ed8, #2563eb); padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #bfdbfe; margin-bottom: 8px;">Thursday</h4>
+                        <p style="font-size: 0.9rem;">TikTok Challenges</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">5:00 - 7:00 PM</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #1d4ed8, #2563eb); padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #bfdbfe; margin-bottom: 8px;">Friday</h4>
+                        <p style="font-size: 0.9rem;">Freestyle Battle</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">5:00 - 7:00 PM</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #1d4ed8, #2563eb); padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #bfdbfe; margin-bottom: 8px;">Saturday</h4>
+                        <p style="font-size: 0.9rem;">Lingala & Hype</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">5:00 - 7:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 20px; border-radius: 15px; border: 2px solid rgba(59, 130, 246, 0.4);">
+                    <h4 style="color: #dbeafe; margin-bottom: 12px;">🎓 Beginner Friendly</h4>
+                    <p style="font-size: 0.9rem;">Never danced before? No problem! We welcome all skill levels and provide patient, supportive instruction.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 20px; border-radius: 15px; border: 2px solid rgba(59, 130, 246, 0.4);">
+                    <h4 style="color: #dbeafe; margin-bottom: 12px;">💪 Skill Building</h4>
+                    <p style="font-size: 0.9rem;">Progressive learning approach - from basic moves to advanced choreography and performance techniques.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 20px; border-radius: 15px; border: 2px solid rgba(59, 130, 246, 0.4);">
+                    <h4 style="color: #dbeafe; margin-bottom: 12px;">🤝 Community</h4>
+                    <p style="font-size: 0.9rem;">Join a supportive dance family where everyone encourages each other to grow and shine!</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <p style="margin-bottom: 15px; font-size: 0.95rem;">Ready to start your dance journey with K Crew?</p>
+                <button onclick="closeModal('workshopsModal'); openModal('contactModal');" class="cta-button">Join Our Workshops</button>
             </div>
         </div>
     </div>
@@ -941,84 +1262,53 @@
     <!-- Contribute Modal -->
     <div id="contributeModal" class="modal">
         <div class="modal-content">
+            <div class="modal-crew-image"></div>
             <button class="modal-close" onclick="closeModal('contributeModal')">&times;</button>
             <h2>Support K Crew Dancers 💰</h2>
-            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px; color: rgba(255,255,255,0.9);">
-                Your support helps us continue bringing blue dance vibes to communities across Kenya. Every contribution makes a difference! ✨
+            <p style="text-align: center; font-size: 1rem; margin-bottom: 25px; color: rgba(255,255,255,0.9);">
+                Your support helps us continue bringing urban dance energy to communities across Kenya. Every contribution makes a difference! ✨
             </p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <h3 style="color: #feca57; margin-bottom: 15px;">🏆 Competition Registration</h3>
-                    <p>Entry fees for major dance competitions including World Hip-Hop Championships, National Dance Battles, and regional showcases.</p>
-                    <div style="margin-top: 15px; padding: 10px; background: rgba(254, 202, 87, 0.1); border-radius: 10px;">
-                        <strong>Target: KES 50,000</strong>
-                    </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <h3 style="color: #60a5fa; margin-bottom: 12px; font-size: 1rem;">🏆 Competition Registration</h3>
+                    <p style="font-size: 0.85rem;">Entry fees for major dance competitions and national showcases</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <h3 style="color: #feca57; margin-bottom: 15px;">📸 Professional Content</h3>
-                    <p>High-quality video production, photography sessions, and content creation to showcase our performances globally.</p>
-                    <div style="margin-top: 15px; padding: 10px; background: rgba(254, 202, 87, 0.1); border-radius: 10px;">
-                        <strong>Target: KES 75,000</strong>
-                    </div>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <h3 style="color: #feca57; margin-bottom: 15px;">🎉 Community Events</h3>
-                    <p>Organizing workshops, dance battles, and community outreach programs to spread blue dance vibes.</p>
-                    <div style="margin-top: 15px; padding: 10px; background: rgba(254, 202, 87, 0.1); border-radius: 10px;">
-                        <strong>Target: KES 30,000</strong>
-                    </div>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <h3 style="color: #feca57; margin-bottom: 15px;">👕 Equipment & Costumes</h3>
-                    <p>Professional dance attire, sound equipment, and performance gear for our growing crew.</p>
-                    <div style="margin-top: 15px; padding: 10px; background: rgba(254, 202, 87, 0.1); border-radius: 10px;">
-                        <strong>Target: KES 40,000</strong>
-                    </div>
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <h3 style="color: #60a5fa; margin-bottom: 12px; font-size: 1rem;">📸 Professional Content</h3>
+                    <p style="font-size: 0.85rem;">High-quality video production and photography sessions</p>
                 </div>
             </div>
 
             <div class="payment-form">
-                <h3 style="text-align: center; color: #feca57; margin-bottom: 25px; font-size: 1.5rem;">💙 Make Your Contribution</h3>
+                <h3 style="text-align: center; color: #60a5fa; margin-bottom: 20px; font-size: 1.2rem;">🎭 Make Your Contribution</h3>
                 <form id="contribution-form">
-                    <input type="text" id="name" placeholder="Your Full Name (e.g., Alex Mwangi)" required>
-                    
+                    <input type="text" id="name" placeholder="Your Full Name (e.g., Mckana Wanjala)" required>
                     <select id="reason" required>
                         <option value="">Choose Contribution Purpose</option>
-                        <option value="Competition Registration">🏆 Competition Registration (KES 50,000 target)</option>
-                        <option value="Professional Content">📸 Professional Content (KES 75,000 target)</option>
-                        <option value="Community Events">🎉 Community Events (KES 30,000 target)</option>
-                        <option value="Equipment & Costumes">👕 Equipment & Costumes (KES 40,000 target)</option>
+                        <option value="Competition Registration">🏆 Competition Registration</option>
+                        <option value="Professional Content">📸 Professional Content</option>
+                        <option value="Equipment & Costumes">👕 Equipment & Costumes</option>
                         <option value="General Support">✨ General Support</option>
                     </select>
-                    
                     <input type="tel" id="whatsapp" placeholder="WhatsApp Number (e.g., +254700000000)" required>
-                    
                     <input type="tel" id="mpesa" placeholder="M-Pesa Number (e.g., 0700000000)" required>
-                    
                     <input type="number" id="amount" placeholder="Contribution Amount (KES)" min="50" required>
-                    
-                    <button type="submit">💙 Proceed to Payment</button>
+                    <button type="submit">🎭 Proceed to Payment</button>
                 </form>
                 
-                <div id="payment-instructions" style="display: none; background: linear-gradient(135deg, #00b894, #00cec9); padding: 25px; margin-top: 25px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.3);">
-                    <h4 style="margin-bottom: 15px; font-size: 1.3rem;">🎉 Complete Your Payment</h4>
-                    <p style="margin-bottom: 15px;">Thank you, <strong><span id="display-name"></span></strong>! Complete your <strong><span id="display-reason"></span></strong> contribution of <strong>KES <span id="display-amount"></span></strong>:</p>
+                <div id="payment-instructions" style="display: none; background: linear-gradient(135deg, #10b981, #059669); padding: 20px; margin-top: 20px; border-radius: 15px;">
+                    <h4 style="margin-bottom: 12px; font-size: 1.1rem;">🎉 Complete Your Payment</h4>
+                    <p style="margin-bottom: 12px; font-size: 0.9rem;">Thank you, <strong><span id="display-name"></span></strong>! Complete your contribution:</p>
                     
-                    <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; margin: 15px 0;">
-                        <h5 style="margin-bottom: 10px;">📱 M-Pesa Payment Steps:</h5>
-                        <ol style="font-size: 1rem; line-height: 1.6; margin-left: 20px;">
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; margin: 12px 0;">
+                        <h5 style="margin-bottom: 8px; font-size: 0.95rem;">📱 M-Pesa Payment Steps:</h5>
+                        <ol style="font-size: 0.85rem; line-height: 1.5; margin-left: 15px;">
                             <li>Open M-Pesa menu on your phone</li>
                             <li>Select <strong>"Lipa na M-Pesa"</strong> → <strong>"Pay Bill"</strong></li>
-                            <li>Business Number: <strong>567890</strong> (K Crew Dancers)</li>
-                            <li>Account Number: <strong><span id="account-number"></span></strong></li>
+                            <li>Business Number: <strong>567890</strong></li>
                             <li>Amount: <strong>KES <span id="confirm-amount"></span></strong></li>
-                            <li>Enter your M-Pesa PIN and confirm ✅</li>
                         </ol>
-                    </div>
-                    
-                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
-                        <p><strong>📲 Final Step:</strong> Send payment confirmation screenshot to <strong><span id="whatsapp-contact"></span></strong> on WhatsApp for verification and your thank you message! 💙</p>
                     </div>
                 </div>
             </div>
@@ -1028,48 +1318,25 @@
     <!-- Events Modal -->
     <div id="eventsModal" class="modal">
         <div class="modal-content">
+            <div class="modal-crew-image"></div>
             <button class="modal-close" onclick="closeModal('eventsModal')">&times;</button>
-            <h2>Upcoming Events 🎭</h2>
-            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">Don't miss out on our electrifying performances and workshops! 💙🔥</p>
+            <h2>Upcoming Events 🎪</h2>
+            <p style="text-align: center; font-size: 1rem; margin-bottom: 25px;">Don't miss out on our electrifying performances and workshops! 🔥</p>
             
-            <div style="display: grid; gap: 25px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; border-left: 5px solid #feca57; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
-                    <h3 style="color: #feca57; margin-bottom: 10px;">🏆 Blue Vibes Dance Championship 2025</h3>
-                    <p style="margin-bottom: 10px;"><strong>Date:</strong> March 15th, 2025 | <strong>Time:</strong> 6:00 PM</p>
-                    <p style="margin-bottom: 10px;"><strong>Venue:</strong> Kibabii University Main Hall</p>
-                    <p style="margin-bottom: 15px;">The biggest dance competition of the year featuring crews from across Kenya. Watch K Crew defend their title!</p>
-                    <a href="#" style="color: #ff9ff3; font-weight: 600; text-decoration: none; padding: 8px 16px; background: rgba(255,159,243,0.2); border-radius: 20px; transition: all 0.3s ease;" onmouseover="this.style.background='#ff9ff3'; this.style.color='#fff'" onmouseout="this.style.background='rgba(255,159,243,0.2)'; this.style.color='#ff9ff3'">Get Tickets 🎫</a>
+            <div style="display: grid; gap: 20px;">
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 15px; border-left: 4px solid #60a5fa;">
+                    <h3 style="color: #60a5fa; margin-bottom: 8px; font-size: 1.1rem;">🏆 Urban Dance Championship 2025</h3>
+                    <p style="margin-bottom: 8px; font-size: 0.9rem;"><strong>Date:</strong> March 15th, 2025 | <strong>Time:</strong> 6:00 PM</p>
+                    <p style="margin-bottom: 8px; font-size: 0.9rem;"><strong>Venue:</strong> Kibabii University Main Hall</p>
+                    <p style="margin-bottom: 12px; font-size: 0.85rem;">The biggest dance competition featuring crews from across Kenya.</p>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; border-left: 5px solid #feca57; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
-                    <h3 style="color: #feca57; margin-bottom: 10px;">💃 K Crew Blue Hype Night</h3>
-                    <p style="margin-bottom: 10px;"><strong>Date:</strong> Every Friday | <strong>Time:</strong> 7:00 PM - 11:00 PM</p>
-                    <p style="margin-bottom: 10px;"><strong>Venue:</strong> ABB 205 </p>
-                    <p style="margin-bottom: 15px;">Weekly dance sessions featuring freestyle battles, workshops, and community vibes. Donations welcome!</p>
-                    <a href="#" style="color: #ff9ff3; font-weight: 600; text-decoration: none; padding: 8px 16px; background: rgba(255,159,243,0.2); border-radius: 20px; transition: all 0.3s ease;" onmouseover="this.style.background='#ff9ff3'; this.style.color='#fff'" onmouseout="this.style.background='rgba(255,159,243,0.2)'; this.style.color='#ff9ff3'">Join Us 🎉</a>
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 15px; border-left: 4px solid #60a5fa;">
+                    <h3 style="color: #60a5fa; margin-bottom: 8px; font-size: 1.1rem;">💃 K Crew Dance Night</h3>
+                    <p style="margin-bottom: 8px; font-size: 0.9rem;"><strong>Date:</strong> Every Friday | <strong>Time:</strong> 7:00 PM - 11:00 PM</p>
+                    <p style="margin-bottom: 8px; font-size: 0.9rem;"><strong>Venue:</strong> Kibabii University Student Centre</p>
+                    <p style="font-size: 0.85rem;">Weekly dance sessions featuring freestyle battles and workshops.</p>
                 </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; border-left: 5px solid #feca57; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
-                    <h3 style="color: #feca57; margin-bottom: 10px;">🌟 Inter-University Dance Battle</h3>
-                    <p style="margin-bottom: 10px;"><strong>Date:</strong> April 20th, 2025 | <strong>Time:</strong> 3:00 PM</p>
-                    <p style="margin-bottom: 10px;"><strong>Venue:</strong> KICC Nairobi</p>
-                    <p style="margin-bottom: 15px;">Kenya's premier university dance competition. 12 universities, one champion. K Crew representing!</p>
-                    <a href="#" style="color: #ff9ff3; font-weight: 600; text-decoration: none; padding: 8px 16px; background: rgba(255,159,243,0.2); border-radius: 20px; transition: all 0.3s ease;" onmouseover="this.style.background='#ff9ff3'; this.style.color='#fff'" onmouseout="this.style.background='rgba(255,159,243,0.2)'; this.style.color='#ff9ff3'">Support Us 🏆</a>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; border-left: 5px solid #feca57; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
-                    <h3 style="color: #feca57; margin-bottom: 10px;">🎪 Community Blue Dance Festival</h3>
-                    <p style="margin-bottom: 10px;"><strong>Date:</strong> May 5th, 2025 | <strong>Time:</strong> 2:00 PM - 8:00 PM</p>
-                    <p style="margin-bottom: 10px;"><strong>Venue:</strong> Bungoma Town Square</p>
-                    <p style="margin-bottom: 15px;">Free community event featuring performances, workshops, and dance lessons for all ages!</p>
-                    <a href="#" style="color: #ff9ff3; font-weight: 600; text-decoration: none; padding: 8px 16px; background: rgba(255,159,243,0.2); border-radius: 20px; transition: all 0.3s ease;" onmouseover="this.style.background='#ff9ff3'; this.style.color='#fff'" onmouseout="this.style.background='rgba(255,159,243,0.2)'; this.style.color='#ff9ff3'">Learn More 🌟</a>
-                </div>
-            </div>
-
-            <div style="background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); padding: 25px; border-radius: 20px; border: 2px solid rgba(254, 202, 87, 0.3); margin-top: 30px; text-align: center;">
-                <h3 style="color: #feca57; margin-bottom: 15px;">📅 Want to Book K Crew?</h3>
-                <p style="margin-bottom: 20px;">Looking to add blue dance vibes to your event? We're available for performances, workshops, and special occasions.</p>
-                <a href="#" onclick="closeModal('eventsModal'); openModal('contactModal');" class="cta-button">Book Us Now</a>
             </div>
         </div>
     </div>
@@ -1077,6 +1344,7 @@
     <!-- Gallery Modal -->
     <div id="galleryModal" class="modal">
         <div class="modal-content">
+            <div class="modal-crew-image"></div>
             <button class="modal-close" onclick="closeModal('galleryModal')">&times;</button>
             <div class="gallery-header">
                 <h2>Gallery 📸</h2>
@@ -1086,75 +1354,49 @@
             <div class="gallery" id="galleryGrid">
                 <!-- Initial 3 images -->
                 <div class="gallery-item">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Dancers - Official Performance Photo">
+                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Dancers Performance">
                     <div class="gallery-overlay">
                         <h4>K Crew Official Performance</h4>
-                        <p>Our signature blue dance vibes in action</p>
+                        <p>Our signature urban dance energy in action</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Blue Energy Show" style="filter: hue-rotate(45deg) brightness(1.1);">
+                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Energy Show" style="filter: hue-rotate(45deg) brightness(1.1);">
                     <div class="gallery-overlay">
-                        <h4>Blue Energy Show</h4>
-                        <p>Electrifying blue dance performance</p>
+                        <h4>Hip-Hop Energy Show</h4>
+                        <p>Electrifying dance performance</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Team Formation" style="filter: hue-rotate(90deg);">
                     <div class="gallery-overlay">
                         <h4>Team Formation</h4>
-                        <p>Perfect synchronization and blue vibes</p>
+                        <p>Perfect synchronization and urban energy</p>
                     </div>
                 </div>
                 
                 <!-- Extra images -->
                 <div class="gallery-item extra-images">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Competition Performance" style="filter: hue-rotate(135deg) brightness(0.9);">
+                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Competition" style="filter: hue-rotate(135deg);">
                     <div class="gallery-overlay">
                         <h4>Competition Ready</h4>
-                        <p>Bringing the heat to dance battles across Kenya</p>
+                        <p>Bringing the heat to dance battles</p>
                     </div>
                 </div>
                 <div class="gallery-item extra-images">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Workshop Session" style="filter: hue-rotate(180deg);">
+                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Workshop" style="filter: hue-rotate(180deg);">
                     <div class="gallery-overlay">
                         <h4>Workshop Session</h4>
-                        <p>Teaching blue dance vibes to the community</p>
+                        <p>Teaching dance to the community</p>
                     </div>
                 </div>
                 <div class="gallery-item extra-images">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Behind the Scenes" style="filter: hue-rotate(225deg) brightness(1.2);">
+                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Behind Scenes" style="filter: hue-rotate(225deg);">
                     <div class="gallery-overlay">
                         <h4>Behind the Scenes</h4>
-                        <p>The dedication and hard work that makes magic happen</p>
+                        <p>The dedication that makes magic happen</p>
                     </div>
                 </div>
-                <div class="gallery-item extra-images">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Hip-hop Style" style="filter: hue-rotate(270deg);">
-                    <div class="gallery-overlay">
-                        <h4>Hip-Hop Fusion</h4>
-                        <p>Explosive urban moves with African rhythm</p>
-                    </div>
-                </div>
-                <div class="gallery-item extra-images">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Contemporary Flow" style="filter: hue-rotate(315deg) brightness(0.8);">
-                    <div class="gallery-overlay">
-                        <h4>Contemporary Flow</h4>
-                        <p>Smooth transitions and emotional storytelling</p>
-                    </div>
-                </div>
-                <div class="gallery-item extra-images">
-                    <img src="https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true" alt="K Crew Cultural Dance" style="filter: sepia(30%) hue-rotate(200deg);">
-                    <div class="gallery-overlay">
-                        <h4>Cultural Fusion</h4>
-                        <p>Traditional moves with modern blue energy twist</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="margin-top: 30px; text-align: center; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px;">
-                <p style="margin-bottom: 15px;">Want professional photos or videos of your event? We work with top photographers and videographers!</p>
-                <a href="#" onclick="closeModal('galleryModal'); openModal('contactModal');" class="cta-button">Book Photo Session</a>
             </div>
         </div>
     </div>
@@ -1162,96 +1404,74 @@
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
+            <div class="modal-crew-image"></div>
             <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
             <h2>Contact K Crew Dancers 📞</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 30px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <div style="font-size: 2.5rem; margin-bottom: 15px;">📧</div>
-                    <h4 style="color: #feca57; margin-bottom: 10px;">Email Us</h4>
-                    <p style="margin-bottom: 10px;">kcrew@kibabii.ac.ke</p>
-                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">For bookings, partnerships, and general inquiries</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <div style="font-size: 2rem; margin-bottom: 12px;">📧</div>
+                    <h4 style="color: #60a5fa; margin-bottom: 8px; font-size: 1rem;">Email Us</h4>
+                    <p style="margin-bottom: 8px; font-size: 0.9rem;">kcrew@kibabii.ac.ke</p>
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">For bookings and partnerships</p>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <h4 style="color: #feca57; margin-bottom: 20px;">Follow Our Blue Vibes</h4>
-                    <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 15px;">
-                        <a href="https://instagram.com/kcrewkibabii" target="_blank" style="color: #ff9ff3; transition: all 0.3s ease;" onmouseover="this.style.color='#feca57'; this.style.transform='scale(1.2)'" onmouseout="this.style.color='#ff9ff3'; this.style.transform='scale(1)'">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                        <a href="https://tiktok.com/@kcrewdancers" target="_blank" style="color: #ff9ff3; transition: all 0.3s ease;" onmouseover="this.style.color='#feca57'; this.style.transform='scale(1.2)'" onmouseout="this.style.color='#ff9ff3'; this.style.transform='scale(1)'">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                            </svg>
-                        </a>
-                        <a href="https://youtube.com/@kcrewdancers" target="_blank" style="color: #ff9ff3; transition: all 0.3s ease;" onmouseover="this.style.color='#feca57'; this.style.transform='scale(1.2)'" onmouseout="this.style.color='#ff9ff3'; this.style.transform='scale(1)'">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                        </a>
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <h4 style="color: #60a5fa; margin-bottom: 15px; font-size: 1rem;">Follow Our Energy</h4>
+                    <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 12px;">
+                        <div style="width: 25px; height: 25px; background: #3b82f6; border-radius: 50%;"></div>
+                        <div style="width: 25px; height: 25px; background: #60a5fa; border-radius: 50%;"></div>
+                        <div style="width: 25px; height: 25px; background: #93c5fd; border-radius: 50%;"></div>
                     </div>
-                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">@kcrewkibabii | @kcrewdancers</p>
-                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 5px;">Follow for daily blue vibes!</p>
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Social links coming soon!</p>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <div style="font-size: 2.5rem; margin-bottom: 15px;">📍</div>
-                    <h4 style="color: #feca57; margin-bottom: 10px;">Find Us</h4>
-                    <p>Kibabii University</p>
-                    <p>Student Activities Center</p>
-                    <p>Room 201, 2nd Floor</p>
-                    <p>Bungoma, Kenya</p>
+                <div style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1)); padding: 20px; border-radius: 15px; text-align: center; border: 2px solid rgba(59, 130, 246, 0.3);">
+                    <div style="font-size: 2rem; margin-bottom: 12px;">📍</div>
+                    <h4 style="color: #60a5fa; margin-bottom: 8px; font-size: 1rem;">Find Us</h4>
+                    <p style="font-size: 0.85rem;">Kibabii University</p>
+                    <p style="font-size: 0.85rem;">Student Activities Center</p>
+                    <p style="font-size: 0.85rem;">Bungoma, Kenya</p>
                 </div>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; border: 2px solid rgba(254, 202, 87, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#feca57'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(254, 202, 87, 0.3)'">
-                    <div style="font-size: 2.5rem; margin-bottom: 15px;">⏰</div>
-                    <h4 style="color: #feca57; margin-bottom: 10px;">Practice Times</h4>
-                    <p><strong>Monday-Friday:</strong> 5:00 PM - 7:00 PM</p>
-                    <p><strong>Saturday:</strong> 5:00 PM - 7:00 PM</p>
-                    <p><strong>Sunday:</strong> Rest Day</p>
-                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Drop by anytime!</p>
-                </div>
-            </div>
-
-            <div style="background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); padding: 30px; border-radius: 20px; border: 2px solid rgba(254, 202, 87, 0.3); text-align: center;">
-                <h3 style="color: #feca57; margin-bottom: 20px;">🤝 Partnership Opportunities</h3>
-                <p style="margin-bottom: 20px; font-size: 1.1rem;">Ready to partner with Kenya's most electrifying dance crew? We offer:</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
-                    <div>✨ Event Performances</div>
-                    <div>🎭 Corporate Entertainment</div>
-                    <div>📚 Workshop Facilitation</div>
-                    <div>🎬 Video Collaborations</div>
-                </div>
-                <a href="mailto:kcrew@kibabii.ac.ke?subject=Partnership Inquiry" class="cta-button">Start Partnership</a>
             </div>
         </div>
     </div>
 
-    <footer style="background: linear-gradient(135deg, #2d3436, #636e72); color: #fff; text-align: center; padding: 40px; margin-top: 60px;">
-        <p style="font-size: 1.1rem; margin-bottom: 10px;">&copy; 2025 K Crew Dancers - Kibabii University. Powered by Blue Dance Vibes! 💙🎭🕺</p>
-        <p style="font-size: 0.9rem; opacity: 0.8;">Keep dancing, keep dreaming, keep inspiring with blue energy! ✨</p>
-        <div style="margin-top: 20px;">
-            <a href="#" onclick="openModal('aboutModal')" style="color: #feca57; margin: 0 15px; text-decoration: none;">About</a>
-            <a href="#" onclick="openModal('contributeModal')" style="color: #feca57; margin: 0 15px; text-decoration: none;">Support</a>
-            <a href="#" onclick="openModal('contactModal')" style="color: #feca57; margin: 0 15px; text-decoration: none;">Contact</a>
+    <footer style="background: linear-gradient(135deg, #1e3c72, #2a5298); color: #fff; text-align: center; padding: 30px; margin-top: 40px; position: relative;">
+        <p style="font-size: 1rem; margin-bottom: 8px;">&copy; 2025 K Crew Dancers - Kibabii University. Powered by Urban Dance Energy! 🎭🕺💃</p>
+        <p style="font-size: 0.8rem; opacity: 0.8;">Keep dancing, keep dreaming, keep inspiring with urban energy! ✨</p>
+        
+        <!-- Liam Credits -->
+        <div style="position: absolute; bottom: 5px; right: 15px; font-size: 10px; color: #10b981; font-weight: 600; background: rgba(0,0,0,0.3); padding: 3px 8px; border-radius: 8px; border: 1px solid #10b981;">
+            passion crafts of Liam
         </div>
     </footer>
 
     <script>
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
         // Auto-changing dance quotes
         const danceQuotes = [
-            "💙 Bringing Blue Dance Vibes to Kibabii University 💙",
-            "🎭 Where Rhythm Meets Passion",
-            "💃 Dancing is the Language of the Soul",
-            "⚡ Blue Energy, Endless Possibilities",
+            "🎭 Bringing Urban Dance Energy to Kibabii University 🎭",
+            "💃 Where Rhythm Meets Passion",
+            "🕺 Dancing is the Language of the Soul",
+            "⚡ Hip-Hop Energy, Endless Possibilities",
             "🎵 Every Beat Tells a Story",
-            "🕺 Movement is Life, Dance is Freedom",
+            "🎶 Movement is Life, Dance is Freedom",
             "✨ Choreographing Dreams into Reality",
             "🤝 Unity Through Dance, Power Through Movement",
-            "🎶 Feel the Music, Live the Dance",
-            "💙 Blue Vibes, Electric Moves"
+            "🎪 Feel the Music, Live the Dance",
+            "🔥 Urban Vibes, Electric Moves"
         ];
 
         let currentQuoteIndex = 0;
@@ -1284,8 +1504,8 @@
         // Change slide every 3 seconds
         setInterval(nextSlide, 3000);
 
-        // Real Music Player with K Crew Background Music
-        class BlueMusicPlayer {
+        // Music Player - Only User's Audio
+        class MusicPlayer {
             constructor() {
                 this.isPlaying = false;
                 this.audio = null;
@@ -1296,88 +1516,38 @@
                 try {
                     this.audio = new Audio('https://github.com/Dialmw/Kcrew-/blob/main/background%20msc.mp3?raw=true');
                     this.audio.loop = true;
-                    this.audio.volume = 0.3;
+                    this.audio.volume = 0.4;
                     this.audio.preload = 'auto';
                     
-                    // Handle audio events
-                    this.audio.addEventListener('loadstart', () => console.log('🎵 Loading K Crew background music...'));
-                    this.audio.addEventListener('canplaythrough', () => console.log('🎵 K Crew music ready to play!'));
+                    this.audio.addEventListener('loadstart', () => console.log('🎵 Loading K Crew music...'));
+                    this.audio.addEventListener('canplaythrough', () => console.log('🎵 K Crew music ready!'));
                     this.audio.addEventListener('error', (e) => {
-                        console.log('🎵 Audio error, falling back to demo music');
-                        this.fallbackToDemo();
+                        console.log('🎵 Audio not available');
+                        this.audio = null;
                     });
                 } catch (e) {
-                    console.log('🎵 Audio not supported, using demo mode');
-                    this.fallbackToDemo();
-                }
-            }
-
-            fallbackToDemo() {
-                // Fallback to Web Audio API demo if real audio fails
-                try {
-                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    this.gainNode = this.audioContext.createGain();
-                    this.gainNode.connect(this.audioContext.destination);
-                    this.gainNode.gain.value = 0.2;
-                    this.useFallback = true;
-                } catch (e) {
-                    console.log('Web Audio API not supported');
+                    console.log('🎵 Audio not supported');
+                    this.audio = null;
                 }
             }
 
             async playTrack() {
-                if (this.audio && !this.useFallback) {
+                if (this.audio) {
                     try {
                         await this.audio.play();
                         this.isPlaying = true;
                     } catch (e) {
-                        console.log('Audio play failed, using fallback');
-                        this.fallbackToDemo();
-                        this.playDemoTrack();
+                        console.log('Audio play failed');
+                        this.isPlaying = false;
                     }
-                } else {
-                    this.playDemoTrack();
                 }
                 this.updateUI();
             }
 
-            playDemoTrack() {
-                if (!this.audioContext) return;
-                
-                if (this.oscillator) {
-                    this.oscillator.stop();
-                }
-
-                const frequencies = [392, 440, 523, 392, 330, 440, 523, 659];
-                this.oscillator = this.audioContext.createOscillator();
-                this.oscillator.connect(this.gainNode);
-                this.oscillator.type = 'sine';
-                
-                let time = this.audioContext.currentTime;
-                frequencies.forEach((freq, index) => {
-                    this.oscillator.frequency.setValueAtTime(freq, time + index * 0.7);
-                });
-
-                this.oscillator.start();
-                this.isPlaying = true;
-                
-                // Loop demo track
-                setTimeout(() => {
-                    if (this.oscillator && this.isPlaying) {
-                        this.oscillator.stop();
-                        this.oscillator = null;
-                        setTimeout(() => this.playDemoTrack(), 1000);
-                    }
-                }, 8000);
-            }
-
             stop() {
-                if (this.audio && !this.useFallback) {
+                if (this.audio) {
                     this.audio.pause();
                     this.audio.currentTime = 0;
-                } else if (this.oscillator) {
-                    this.oscillator.stop();
-                    this.oscillator = null;
                 }
                 this.isPlaying = false;
                 this.updateUI();
@@ -1406,14 +1576,14 @@
         }
 
         // Initialize music player
-        const blueMusicPlayer = new BlueMusicPlayer();
+        const musicPlayer = new MusicPlayer();
 
         // Music control event listener
         document.getElementById('musicControl').addEventListener('click', function() {
-            if (blueMusicPlayer.isPlaying) {
-                blueMusicPlayer.stop();
+            if (musicPlayer.isPlaying) {
+                musicPlayer.stop();
             } else {
-                blueMusicPlayer.playTrack();
+                musicPlayer.playTrack();
             }
         });
 
@@ -1448,23 +1618,119 @@
             }
         });
 
-        // Enhanced Form Submission
+        // Enhanced gallery with click to view and download functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            
+            galleryItems.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    openImageViewer(this.src, index);
+                });
+            });
+        });
+
+        function openImageViewer(src, index) {
+            const viewer = document.createElement('div');
+            viewer.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.95);
+                z-index: 3000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            const container = document.createElement('div');
+            container.style.cssText = `
+                position: relative;
+                max-width: 90%;
+                max-height: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            `;
+            
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.cssText = `
+                max-width: 100%;
+                max-height: 80vh;
+                object-fit: contain;
+                border-radius: 15px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+                border: 3px solid rgba(59, 130, 246, 0.5);
+            `;
+            
+            const controls = document.createElement('div');
+            controls.style.cssText = `
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            `;
+            
+            const downloadBtn = document.createElement('button');
+            downloadBtn.innerHTML = '📥 Download';
+            downloadBtn.style.cssText = `
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                color: #fff;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 25px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            `;
+            
+            downloadBtn.onclick = () => {
+                const link = document.createElement('a');
+                link.href = src;
+                link.download = `k-crew-photo-${index + 1}.jpg`;
+                link.click();
+            };
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '✕ Close';
+            closeBtn.style.cssText = `
+                background: rgba(59,130,246,0.2);
+                color: white;
+                padding: 12px 25px;
+                border: 2px solid rgba(59, 130, 246, 0.5);
+                border-radius: 25px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            `;
+            
+            closeBtn.onclick = () => document.body.removeChild(viewer);
+            viewer.onclick = (e) => {
+                if (e.target === viewer) document.body.removeChild(viewer);
+            };
+            
+            controls.appendChild(downloadBtn);
+            controls.appendChild(closeBtn);
+            container.appendChild(img);
+            container.appendChild(controls);
+            viewer.appendChild(container);
+            document.body.appendChild(viewer);
+        }
+
+        // Form Submission
         document.getElementById('contribution-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
             const reason = document.getElementById('reason').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const mpesa = document.getElementById('mpesa').value;
             const amount = document.getElementById('amount').value;
             
-            // Validation
-            if (!name || !reason || !whatsapp || !mpesa || !amount) {
-                showCustomAlert('Please fill in all fields before proceeding! 📝', 'error');
-                return;
-            }
-            
-            if (amount < 50) {
-                showCustomAlert('Minimum contribution amount is KES 50. Thank you! 💙', 'warning');
+            if (!name || !reason || !amount || amount < 50) {
+                showCustomAlert('Please fill in all fields correctly! Minimum KES 50 required.', 'error');
                 return;
             }
             
@@ -1474,29 +1740,21 @@
             instructions.scrollIntoView({ behavior: 'smooth' });
             
             document.getElementById('display-name').textContent = name;
-            document.getElementById('display-amount').textContent = amount;
             document.getElementById('confirm-amount').textContent = amount;
-            document.getElementById('display-reason').textContent = reason;
-            document.getElementById('whatsapp-contact').textContent = whatsapp;
-            document.getElementById('account-number').textContent = name.toUpperCase().replace(/\s+/g, '').substring(0, 10);
             
-            // Reset form
             this.reset();
             
-            // Celebration effect
             setTimeout(() => {
-                createBlueConfetti();
-                showCustomAlert('🎉 Thank you for supporting K Crew Dancers! Your contribution will help us continue spreading blue dance vibes across Kenya! 💙✨', 'success');
+                showCustomAlert('🎉 Thank you for supporting K Crew Dancers! 🎭', 'success');
             }, 1000);
         });
 
         // Custom Alert Function
         function showCustomAlert(message, type = 'info') {
             const alertDiv = document.createElement('div');
-            const bgColor = type === 'success' ? 'linear-gradient(135deg, #00b894, #00cec9)' : 
-                           type === 'error' ? 'linear-gradient(135deg, #e74c3c, #c0392b)' :
-                           type === 'warning' ? 'linear-gradient(135deg, #f39c12, #e67e22)' :
-                           'linear-gradient(135deg, #667eea, #4834d4)';
+            const bgColor = type === 'success' ? 'linear-gradient(135deg, #10b981, #059669)' : 
+                           type === 'error' ? 'linear-gradient(135deg, #dc2626, #b91c1c)' :
+                           'linear-gradient(135deg, #3b82f6, #1d4ed8)';
             
             alertDiv.style.cssText = `
                 position: fixed;
@@ -1505,17 +1763,16 @@
                 transform: translate(-50%, -50%);
                 background: ${bgColor};
                 color: white;
-                padding: 2.5rem 3rem;
-                border-radius: 25px;
+                padding: 2rem 2.5rem;
+                border-radius: 20px;
                 z-index: 10000;
-                box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.4);
                 text-align: center;
-                max-width: 500px;
+                max-width: 450px;
                 border: 2px solid rgba(255,255,255,0.3);
-                animation: alertIn 0.5s ease-out;
                 font-weight: 600;
-                font-size: 1.1rem;
-                line-height: 1.6;
+                font-size: 1rem;
+                line-height: 1.5;
             `;
             alertDiv.textContent = message;
             
@@ -1523,188 +1780,83 @@
             closeBtn.innerHTML = '✕';
             closeBtn.style.cssText = `
                 position: absolute;
-                top: 15px;
-                right: 20px;
+                top: 10px;
+                right: 15px;
                 background: rgba(255,255,255,0.2);
                 border: none;
                 color: white;
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 cursor: pointer;
-                width: 35px;
-                height: 35px;
+                width: 30px;
+                height: 30px;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: all 0.3s ease;
             `;
-            closeBtn.onmouseover = () => closeBtn.style.background = 'rgba(255,255,255,0.3)';
-            closeBtn.onmouseout = () => closeBtn.style.background = 'rgba(255,255,255,0.2)';
             closeBtn.onclick = () => document.body.removeChild(alertDiv);
             
             alertDiv.appendChild(closeBtn);
             document.body.appendChild(alertDiv);
             
-            // Auto-remove after 7 seconds
             setTimeout(() => {
                 if (document.body.contains(alertDiv)) {
-                    alertDiv.style.animation = 'alertOut 0.5s ease-in';
-                    setTimeout(() => {
-                        if (document.body.contains(alertDiv)) {
-                            document.body.removeChild(alertDiv);
-                        }
-                    }, 500);
+                    document.body.removeChild(alertDiv);
                 }
-            }, 7000);
+            }, 5000);
         }
 
-        // Blue confetti celebration
-        function createBlueConfetti() {
-            const colors = ['#667eea', '#4834d4', '#feca57', '#ff9ff3', '#32cd32'];
-            const emojis = ['💙', '🎵', '🎶', '💃', '🕺', '✨', '🎭', '⚡'];
+        // Mobile navigation toggle
+        function toggleMobileNav() {
+            const dropdown = document.getElementById('mobileNavDropdown');
+            const menuToggle = document.getElementById('menuToggle');
             
-            for (let i = 0; i < 30; i++) {
-                const confetti = document.createElement('div');
-                const isEmoji = Math.random() > 0.4;
-                
-                confetti.textContent = isEmoji ? emojis[Math.floor(Math.random() * emojis.length)] : '●';
-                confetti.style.cssText = `
-                    position: fixed;
-                    top: -10px;
-                    left: ${Math.random() * window.innerWidth}px;
-                    font-size: ${isEmoji ? '2rem' : '1rem'};
-                    color: ${isEmoji ? 'inherit' : colors[Math.floor(Math.random() * colors.length)]};
-                    z-index: 5000;
-                    pointer-events: none;
-                    animation: confettiFall ${3 + Math.random() * 3}s linear forwards;
-                `;
-                
-                document.body.appendChild(confetti);
-                
-                setTimeout(() => {
-                    if (document.body.contains(confetti)) {
-                        document.body.removeChild(confetti);
-                    }
-                }, 6000);
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                menuToggle.textContent = '☰';
+            } else {
+                dropdown.classList.add('show');
+                menuToggle.textContent = '✕';
             }
         }
-
-        // Add CSS animations via JavaScript
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes confettiFall {
-                to {
-                    transform: translateY(100vh) rotate(720deg);
-                    opacity: 0;
-                }
-            }
-            @keyframes alertIn {
-                from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-                to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-            }
-            @keyframes alertOut {
-                from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-                to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-            }
-        `;
-        document.head.appendChild(style);
 
         // Mobile menu toggle
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            const nav = document.querySelector('.main-nav');
-            const navLinks = document.querySelector('.nav-links');
+        document.getElementById('menuToggle').addEventListener('click', toggleMobileNav);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('mobileNavDropdown');
+            const menuToggle = document.getElementById('menuToggle');
             
-            if (navLinks.style.display === 'none' || navLinks.style.display === '') {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                this.textContent = '✕';
-            } else {
-                navLinks.style.display = 'none';
-                this.textContent = '☰';
+            if (!dropdown.contains(e.target) && !menuToggle.contains(e.target) && dropdown.classList.contains('show')) {
+                toggleMobileNav();
             }
         });
 
+        // Add CSS animation for image viewer
+        const imageViewerStyle = document.createElement('style');
+        imageViewerStyle.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(imageViewerStyle);
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🎭 K Crew Dancers - Blue Dance Vibes Website Loaded Successfully! 💙');
+            console.log('🎭 K Crew Dancers - Urban Dance Energy Website Loaded! 🔥');
             
-            // Add smooth scrolling for better UX
             document.documentElement.style.scrollBehavior = 'smooth';
             
-            // Preload critical content
             const mainContent = document.querySelector('.main-content');
             if (mainContent) {
                 mainContent.classList.add('fade-in');
             }
-        });
 
-        // Service Worker for Offline Support
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                // Register service worker
-                const swCode = `
-                    const CACHE_NAME = 'k-crew-dancers-v1';
-                    const urlsToCache = [
-                        '/',
-                        'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap',
-                        'https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true',
-                        'https://github.com/Dialmw/Kcrew-/blob/main/background%20msc.mp3?raw=true'
-                    ];
-
-                    self.addEventListener('install', function(event) {
-                        event.waitUntil(
-                            caches.open(CACHE_NAME)
-                                .then(function(cache) {
-                                    console.log('📦 Caching K Crew resources for offline access');
-                                    return cache.addAll(urlsToCache);
-                                })
-                        );
-                    });
-
-                    self.addEventListener('fetch', function(event) {
-                        event.respondWith(
-                            caches.match(event.request)
-                                .then(function(response) {
-                                    if (response) {
-                                        return response;
-                                    }
-                                    return fetch(event.request);
-                                }
-                            )
-                        );
-                    });
-                `;
-
-                const blob = new Blob([swCode], { type: 'application/javascript' });
-                const swUrl = URL.createObjectURL(blob);
-                
-                navigator.serviceWorker.register(swUrl)
-                    .then(function(registration) {
-                        console.log('✅ K Crew ServiceWorker registered! Offline support enabled:', registration.scope);
-                    })
-                    .catch(function(error) {
-                        console.log('❌ ServiceWorker registration failed:', error);
-                    });
-            });
-        }
-
-        // Performance optimization
-        window.addEventListener('load', function() {
-            console.log('🔥 All resources loaded! K Crew is ready to rock! 🕺💃');
-            
-            // Cache critical images for faster loading
-            const criticalImages = [
-                'https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true'
-            ];
-            
-            criticalImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-            
-            // Preload audio for better performance
-            const audio = new Audio('https://github.com/Dialmw/Kcrew-/blob/main/background%20msc.mp3?raw=true');
-            audio.preload = 'metadata';
+            // Preload critical images
+            const img = new Image();
+            img.src = 'https://github.com/Dialmw/Kcrew-/blob/main/IMG-20250317-WA0120.jpg?raw=true';
         });
     </script>
 </body>
